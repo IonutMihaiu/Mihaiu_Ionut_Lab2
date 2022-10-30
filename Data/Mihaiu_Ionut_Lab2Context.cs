@@ -17,5 +17,7 @@ namespace Mihaiu_Ionut_Lab2.Data
         public DbSet<Mihaiu_Ionut_Lab2.Models.Book> Book { get; set; } = default!;
 
         public DbSet<Mihaiu_Ionut_Lab2.Models.Publisher> Publisher { get; set; }
+
+        public DbSet<Mihaiu_Ionut_Lab2.Models.Author> Authors { get; set; }
     }
 }

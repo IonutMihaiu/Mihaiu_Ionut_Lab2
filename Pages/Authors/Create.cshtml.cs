@@ -5,11 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using Mihaiu_Ionut_Lab2.Data;
 using Mihaiu_Ionut_Lab2.Models;
 
-namespace Mihaiu_Ionut_Lab2.Pages.Books
+namespace Mihaiu_Ionut_Lab2.Pages.Authors
 {
     public class CreateModel : PageModel
     {
@@ -22,16 +21,11 @@ namespace Mihaiu_Ionut_Lab2.Pages.Books
 
         public IActionResult OnGet()
         {
-            ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID",
-"PublisherName");
-            ViewData["AuthorID"] = new SelectList(_context.Set<Author>(), "ID",
-"AuthorName");
             return Page();
         }
 
-
         [BindProperty]
-        public Book Book { get; set; }
+        public Author Authors { get; set; }
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
@@ -42,7 +36,7 @@ namespace Mihaiu_Ionut_Lab2.Pages.Books
                 return Page();
             }
 
-            _context.Book.Add(Book);
+            _context.Authors.Add(Authors);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

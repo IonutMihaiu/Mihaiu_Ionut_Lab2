@@ -19,7 +19,7 @@ namespace Mihaiu_Ionut_Lab2.Pages.Authors
             _context = context;
         }
 
-        public IList<Author> Authors { get;set; } = default!;
+        public IList<Author> Author { get;set; } = default!;
         public List<Book> Book { get; private set; }
 
         public async Task OnGetAsync()

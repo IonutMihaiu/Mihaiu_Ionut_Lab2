@@ -15,9 +15,9 @@ namespace Mihaiu_Ionut_Lab2.Models
         [DataType(DataType.Date)]
         public DateTime PublishingDate { get; set; }
         public int? PublisherID { get; set; }
-        public Publisher? Author { get; set; }//navigation property
+        public Publisher? Publisher { get; set; }//navigation property
         public int? AuthorID { get; set; }
-        public Author? Authors { get; set; }
+        public Author? Author { get; set; }
     }
 
 } 

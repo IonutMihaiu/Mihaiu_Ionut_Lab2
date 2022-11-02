@@ -19,23 +19,23 @@ namespace Mihaiu_Ionut_Lab2.Pages.Authors
             _context = context;
         }
 
-      public Author Authors { get; set; }
+      public Author Author { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Authors == null)
+            if (id == null || _context.Author == null)
             {
                 return NotFound();
             }
 
-            var authors = await _context.Authors.FirstOrDefaultAsync(m => m.ID == id);
-            if (authors == null)
+            var author = await _context.Author.FirstOrDefaultAsync(m => m.ID == id);
+            if (author == null)
             {
                 return NotFound();
             }
             else 
             {
-                Authors = authors;
+                Author = author;
             }
             return Page();
         }

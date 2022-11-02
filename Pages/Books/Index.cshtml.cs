@@ -27,7 +27,7 @@ namespace Mihaiu_Ionut_Lab2.Pages.Books
             {
 
                 Book = await _context.Book
-                     .Include(b => b.Author)
+                     .Include(b => b.Publisher)
                      .Include(b => b.Author)
                     .ToListAsync();
             }
